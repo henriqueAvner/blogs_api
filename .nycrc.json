@@ -1,0 +1,12 @@
+{
+  "all": true,
+  "include": ["src/**/*.js"],
+  "exclude": [
+    "src/{app,server}.js",
+    "src/migrations/**/*.js",
+    "src/seeders/**/*.js",
+    "src/models/**/*.js",
+    "src/config/**/*.js"
+  ],
+  "reporter": ["json-summary", "text"]
+}

@@ -1,0 +1,5 @@
+/__tests__
+**/migrations/
+**/seeders/
+**/models/
+/tests/
