@@ -10,10 +10,10 @@ const JWT_CONFIG = {
 const createToken = (payload) => 
   jwt.sign(payload, JWT_SECRET, JWT_CONFIG);
 
-const verify = (token) =>
+const decodeToken = (token) =>
   jwt.verify(token, JWT_SECRET);
 
 module.exports = {
   createToken,
-  verify,
+  decodeToken,
 };
