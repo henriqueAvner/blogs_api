@@ -3,6 +3,7 @@ const serviceResponse = {
   CREATED: 'CREATED',
   SUCCESS: 'SUCCESS',
   NOT_FOUND: 'NOT_FOUND',
+  CONFLICT: 'CONFLICT',
     
 };
   

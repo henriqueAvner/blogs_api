@@ -24,6 +24,28 @@ const serviceLogin = async (email, password) => {
   return { status: serviceResponse.SUCCESS, data: { token } };
 };
 
+const addUser = async (displayName, email, password, image) => {
+  const someUser = await User.findOne({ where: { email } });
+  if (someUser) {
+    return {
+      status: serviceResponse.CONFLICT,
+      data: { message: 'User already registered' },
+    };
+  }
+  const newUser = await User.create({
+    displayName,
+    email,
+    password,
+    image,
+  });
+  
+  const payload = { id: newUser.id };
+  const token = createToken(payload);
+  return { status: serviceResponse.CREATED, data: { token }, 
+  };
+};
+
 module.exports = {
   serviceLogin,
+  addUser,
 };

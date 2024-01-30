@@ -8,6 +8,14 @@ const loginController = async (req, res) => {
   return res.status(httpMapCode[status]).json(data);
 };
 
+const addUserController = async (req, res) => {
+  const { displayName, email, password, image } = req.body;
+
+  const { status, data } = await userService.addUser(displayName, email, password, image);
+  return res.status(httpMapCode[status]).json(data);
+};
+
 module.exports = {
   loginController,
+  addUserController,
 };
