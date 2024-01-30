@@ -1,6 +1,5 @@
 const express = require('express');
 const { userController } = require('./controllers');
-const { validateToken } = require('./middlewares/auth.middleware');
 
 // ...
 
