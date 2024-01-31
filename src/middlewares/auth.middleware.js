@@ -8,7 +8,7 @@ const validateToken = (req, res, next) => {
   }
   try {
     const decodedData = decodeToken(token);
-    req.locals = { decodedData };
+    req.locals = decodedData;
     next();
   } catch (error) {
     return res.status(401).json({ message: 'Expired or invalid token' });

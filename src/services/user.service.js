@@ -1,6 +1,7 @@
 const { User } = require('../models');
 const { createToken } = require('../utils/auth');
 const serviceResponse = require('../utils/messages');
+const removingPass = require('../utils/removingPass');
 
 const serviceLogin = async (email, password) => {
   if (!email || !password) {
@@ -45,7 +46,14 @@ const addUser = async (displayName, email, password, image) => {
   };
 };
 
+const getAllUsers = async () => {
+  const allUsers = await User.findAll();
+  const trueResult = allUsers.map((user) => removingPass(user.dataValues));
+  return { status: serviceResponse.SUCCESS, data: trueResult };
+};
+
 module.exports = {
   serviceLogin,
   addUser,
+  getAllUsers,
 };

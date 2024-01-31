@@ -1,6 +1,9 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'secretJWT';
+const validToken = `eyJhbGciOiJIUzI1N
+iIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA2NzEyNzU2fQ.kYTJD-PMpA7go9EVd100BpKstSjBA3wshxwbfH0H-qY`;
+
+const JWT_SECRET = process.env.JWT_SECRET || validToken;
 
 const JWT_CONFIG = {
   algorithm: 'HS256',
