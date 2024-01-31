@@ -28,6 +28,8 @@ app.post(
 );
 app.post('/categories', validateToken, categoryController.addNewCategory);
 
+app.get('/categories', validateToken, categoryController.getAllCategories);
+
 app.get('/user', validateToken, userController.getAllUsers);
 app.get('/user/:id', validateToken, userController.getUserById);
 // É importante exportar a constante `app`,

@@ -11,6 +11,12 @@ const addNewCategory = async (name) => {
   return { status: serviceResponse.CREATED, data: newCategory };
 };
 
+const getAllCategories = async () => {  
+  const allCategories = await Category.findAll();
+  return { status: serviceResponse.SUCCESS, data: allCategories };
+};
+
 module.exports = {
   addNewCategory,
+  getAllCategories,
 };
