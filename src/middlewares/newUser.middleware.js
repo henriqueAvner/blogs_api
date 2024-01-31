@@ -1,3 +1,11 @@
+const validateLogin = (req, res, next) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Some required fields are missing' });
+  }
+  next();
+};
+
 const validateDisplayName = (req, res, next) => {
   const { displayName } = req.body;
   if (displayName.length < 8) {
@@ -28,4 +36,5 @@ module.exports = {
   validateDisplayName,
   validateEmailFormat,
   validatePasslength,
+  validateLogin,
 };
