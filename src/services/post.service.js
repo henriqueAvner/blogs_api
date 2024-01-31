@@ -8,18 +8,15 @@ const findAllPosts = async () => {
         as: 'categories', 
         through: { attributes: [] } }],
   });
- 
   const correctAllPosts = allPosts.map((post) => {
-    const sanitizedUser = { ...post.user.dataValues }; 
-    delete sanitizedUser.password;
-  
+    const userWithoutPass = { ...post.user.dataValues }; 
+    delete userWithoutPass.password;
     return {
       ...post.dataValues,
-      user: sanitizedUser,
+      user: userWithoutPass,
   
     }; 
   });
-
   return { status: serviceResponse.SUCCESS, data: correctAllPosts };
 };
 
