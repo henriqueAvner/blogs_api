@@ -1,5 +1,5 @@
 const express = require('express');
-const { userController, categoryController } = require('./controllers');
+const { userController, categoryController, postController } = require('./controllers');
 const { validateDisplayName,
   validateEmailFormat,
   validatePasslength,
@@ -27,8 +27,9 @@ app.post(
   userController.addUserController,
 );
 app.post('/categories', validateToken, categoryController.addNewCategory);
-
 app.get('/categories', validateToken, categoryController.getAllCategories);
+
+app.get('/post', validateToken, postController.findAllPosts);
 
 app.get('/user', validateToken, userController.getAllUsers);
 app.get('/user/:id', validateToken, userController.getUserById);
