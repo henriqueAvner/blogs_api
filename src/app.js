@@ -5,6 +5,7 @@ const { validateDisplayName,
   validatePasslength,
   validateLogin } = require('./middlewares/newUser.middleware');
 const { validateToken } = require('./middlewares/auth.middleware');
+const validatePutMiddleware = require('./middlewares/validatePut.middleware');
 
 // ...
 
@@ -33,6 +34,7 @@ app.get('/categories', validateToken, categoryController.getAllCategories);
 app.get('/post', validateToken, postController.findAllPosts);
 app.get('/post/:id', validateToken, postController.findPostById);
 app.post('/post', validateToken, postController.insertNewPost);
+app.put('/post/:id', validateToken, validatePutMiddleware, postController.updatePost);
 
 app.get('/user', validateToken, userController.getAllUsers);
 app.get('/user/:id', validateToken, userController.getUserById);

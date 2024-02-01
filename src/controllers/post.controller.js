@@ -20,8 +20,18 @@ const insertNewPost = async (req, res) => {
   return res.status(httpMapCode[status]).json(data);
 };
 
+const updatePost = async (req, res) => {
+  const { title, content } = req.body;
+  const { id: postId } = req.params;
+  const { id: userId } = req.locals;
+
+  const { status, data } = await postsService.updatePost(title, content, userId, postId);
+  return res.status(httpMapCode[status]).json(data);
+};
+
 module.exports = {
   findAllPosts,
   findPostById,
   insertNewPost,
+  updatePost,
 };

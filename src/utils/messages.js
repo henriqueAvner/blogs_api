@@ -4,6 +4,7 @@ const serviceResponse = {
   SUCCESS: 'SUCCESS',
   NOT_FOUND: 'NOT_FOUND',
   CONFLICT: 'CONFLICT',
+  UNAUTHORIZED: 'UNAUTHORIZED',
     
 };
   
