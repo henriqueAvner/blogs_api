@@ -12,7 +12,16 @@ const findPostById = async (req, res) => {
   return res.status(httpMapCode[status]).json(data);
 };
 
+const insertNewPost = async (req, res) => {
+  const { title, content, categoryIds } = req.body;
+  const { id } = req.locals;
+  
+  const { status, data } = await postsService.insertNewPost(title, content, categoryIds, id);
+  return res.status(httpMapCode[status]).json(data);
+};
+
 module.exports = {
   findAllPosts,
   findPostById,
+  insertNewPost,
 };

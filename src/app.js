@@ -32,6 +32,7 @@ app.get('/categories', validateToken, categoryController.getAllCategories);
 
 app.get('/post', validateToken, postController.findAllPosts);
 app.get('/post/:id', validateToken, postController.findPostById);
+app.post('/post', validateToken, postController.insertNewPost);
 
 app.get('/user', validateToken, userController.getAllUsers);
 app.get('/user/:id', validateToken, userController.getUserById);
