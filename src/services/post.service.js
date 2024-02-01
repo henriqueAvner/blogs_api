@@ -20,6 +20,28 @@ const findAllPosts = async () => {
   return { status: serviceResponse.SUCCESS, data: correctAllPosts };
 };
 
+const findPostById = async (id) => {
+  const postId = await BlogPost.findOne({ where: { id } });
+  if (!postId) {
+    return { status: serviceResponse.NOT_FOUND, data: { message: 'Post does not exist' } };
+  }
+  const [currPost] = await BlogPost.findAll({
+    where: { id },
+    include: [{ model: User, as: 'user' }, 
+      { model: Category,
+        as: 'categories', 
+        through: { attributes: [] } }],
+  });
+
+  const newResponse = { ...currPost.user.dataValues };
+  delete newResponse.password;
+
+  const newResult = { ...currPost.dataValues, user: newResponse };
+
+  return { status: serviceResponse.SUCCESS, data: newResult };
+};
+
 module.exports = {
   findAllPosts,
+  findPostById,
 };

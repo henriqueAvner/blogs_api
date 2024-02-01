@@ -5,6 +5,7 @@ const { validateDisplayName,
   validatePasslength,
   validateLogin } = require('./middlewares/newUser.middleware');
 const { validateToken } = require('./middlewares/auth.middleware');
+
 // ...
 
 const app = express();
@@ -30,6 +31,7 @@ app.post('/categories', validateToken, categoryController.addNewCategory);
 app.get('/categories', validateToken, categoryController.getAllCategories);
 
 app.get('/post', validateToken, postController.findAllPosts);
+app.get('/post/:id', validateToken, postController.findPostById);
 
 app.get('/user', validateToken, userController.getAllUsers);
 app.get('/user/:id', validateToken, userController.getUserById);
