@@ -5,6 +5,7 @@ const httpMapCode = {
   NOT_FOUND: 404,
   CONFLICT: 409,
   UNAUTHORIZED: 401,
+  NO_CONTENT: 204,
   
 };
 

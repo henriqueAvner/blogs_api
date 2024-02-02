@@ -1,4 +1,5 @@
-const { postsService } = require('../services');
+const { postsService, postService2 } = require('../services');
+
 const httpMapCode = require('../utils/httpCodeMapper');
 
 const findAllPosts = async (req, res) => {
@@ -29,9 +30,17 @@ const updatePost = async (req, res) => {
   return res.status(httpMapCode[status]).json(data);
 };
 
+const deletePost = async (req, res) => {
+  const { id: postId } = req.params;
+  const { id: userId } = req.locals;
+  
+  const { status, data } = await postService2.deletePost(postId, userId);
+  return res.status(httpMapCode[status]).json(data);
+};
 module.exports = {
   findAllPosts,
   findPostById,
   insertNewPost,
   updatePost,
+  deletePost,
 };
