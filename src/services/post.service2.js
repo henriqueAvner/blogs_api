@@ -10,13 +10,10 @@ const deletePost = async (postId, userId) => {
       } };
   }
   const postUser = await BlogPost.findOne({ where: { id: postId, userId } });
-
   if (!postUser) {
     return { status: serviceResponse.UNAUTHORIZED, data: { message: 'Unauthorized user' } };
   }
-
-  await BlogPost.destroy({ where: { id: postId } });
-
+  await BlogPost.destroy({ where: { id: postId } }); 
   return { status: serviceResponse.NO_CONTENT, data: {} };
 };
 
