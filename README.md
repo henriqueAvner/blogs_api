@@ -91,6 +91,58 @@
   :pushpin: Utilize algum aplicativo ou extensão do VSCode para realizar as requisições. 
   </br>
   > Exemplo: ThunderClient, Insomnia, entre outros.
+  ## Gerando seu token:
+ ### Ao fazer uma requisição para a rota POST /login, com email e password, será gerado um token para você. Exemplo:
+
+
+  ```json
+  {
+    "email": "henriqueAvner@gmail.com",
+    "password": "senhaPadraoParaToken"
+  }
+  ```
+ - Ao realizar um login correto (como o exemplo), na rota, um token será gerado:
+   
+    ```json
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjo1LCJkaXNwbGF5TmFtZSI6InVzdWFyaW8gZGUgdGVzdGUiLCJlbWFpbCI6InRlc3RlQGVtYWlsLmNvbSIsImltYWdlIjoibnVsbCJ9LCJpYXQiOjE2MjAyNDQxODcsImV4cCI6MTYyMDY3NjE4N30.Roc4byj6mYakYqd9LTCozU1hd9k_Vw5IWKGL4hcCVG8"
+    }
+    ```
+    > :warning: O token acima é fictício, você deve utilizar seu próprio token.
+
+<br />
+
+  ## Utilizando o token:
+  Resgatando seu token, antes de fazer a requisição para qualquer rota, você deve utilizá-lo no header de sua requisição. Utilizaremos o Insomnia como exemlo:
+
+  1- Adicionando o token - Crie sua rota:
+  
+  <br />
+  
+  ![image](https://github.com/henriqueAvner/blogs_api/assets/133919307/a19b892c-a99c-472a-85f1-b5b64f54393c)
+
+  <br />
+  
+  2 - Mude para a aba Headers, e no primeiro espaço escreva **Authorization**:
+  
+  <br />
+  
+  ![image](https://github.com/henriqueAvner/blogs_api/assets/133919307/cb77168a-0e6d-40b0-8990-3b41fae7a227)
+  
+  <br />
+  
+  3 - No espaço a frente de Authorization, cole o **token** criado em seu login, porém antes, escreva o parâmetro **Bearer**:
+  
+  </br>
+  
+  ![image](https://github.com/henriqueAvner/blogs_api/assets/133919307/6997babf-c3ec-4c2d-96d9-950596dd3b6e)
+  
+  <br />
+  
+  ## :white_check_mark:Assim, você estará permitido a realizar as requisições para todos os endpoints!:white_check_mark:
+
+  
+
 
 
 
