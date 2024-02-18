@@ -24,7 +24,7 @@
      - A pasta utils;
      - As rotas da API dentro do arquivo app.js
 
-<br />
+### :heavy_exclamation_mark:ATENÇÃO!:heavy_exclamation_mark:: Todos os arquivos que não foram mencionados, foram criados pela Trybe! :white_check_mark:
 
 <br />
 
