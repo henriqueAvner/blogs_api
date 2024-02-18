@@ -1,4 +1,6 @@
 # README - Blogs_API
+![image](https://github.com/henriqueAvner/blogs_api/assets/133919307/cce52096-d19e-48f3-9711-05ba40b2ecb4)
+
 
 ## Sobre o projeto:
   <summary><strong>O que foi desenvolvido:</strong></summary>
@@ -13,9 +15,16 @@
 
   3. Foi necessária a utilização de categorias para os posts, trabalhando, assim, a **relação (N:N) de** `posts` para `categories` e de `categories` para `posts`.
 
+  4. Arquivos dentro da pasta src que foram desenvolvidos: 
+     - A pasta controllers;
+     - A pasta de middlewares;
+     - A pasta de migrations;
+     - A pasta de services;
+     - A pasta models;
+     - A pasta utils;
+     - As rotas da API dentro do arquivo app.js
+
 <br />
-
-
 
 <br />
 
@@ -60,3 +69,31 @@
   - :pushpin: Para rodar o projeto desta forma, obrigatoriamente você deve ter o `node` instalado em seu computador.
 
   <br/>
+
+  ## Instruções de utilização do projeto:
+  - ⚠️ TODAS AS ROTAS ABAIXO DA ROTA (`POST /user`) NECESSITAM DE UM TOKEN GERADO PELA ROTA (`POST /login`) PARA FUNCIONAR
+
+  | Rota                      | Funcionalidade                            | Tipo da Requisição |
+|---------------------------|-------------------------------------------|--------------------|
+| /login           | Realiza o login na API para gerar o token          | POST               |
+| /user            | Adicionar novo usuário                             | POST               |
+| /categories      | Adicionar nova categoria para os posts do blog     | POST               |
+| /categories      | Obter todas as categorias                          | GET                |
+| /post            | Obter todos os posts                               | GET                |
+| /post/:id        | Obter post por ID                                  | GET                |
+| /post            | Inserir novo post                                  | POST               |
+| /post/:id        | Atualizar post por ID                              | PUT                |
+| /post/:id        | Excluir post por ID                                | DELETE             |
+| /user            | Obter todos os usuários                            | GET                |
+| /user/:id        | Obter usuário por ID                               | GET                |
+
+  ### Utilização:
+  :pushpin: Utilize algum aplicativo ou extensão do VSCode para realizar as requisições. 
+  </br>
+  > Exemplo: ThunderClient, Insomnia, entre outros.
+
+
+
+
+
+
