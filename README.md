@@ -11,7 +11,7 @@
 
   1. Foram desenvolvidos endpoints que estam conectados ao banco de dados seguindo os princípios do REST;
 
-  2. Para fazer um post é necessário usuário e login, portanto foi trabalhada a **relação (1:N) entre** `user` e `post`; 
+  2. Para fazer um post é necessária a relação entre usuário e login, portanto foi trabalhada a **relação (1:N) entre** `user` e `post`; 
 
   3. Foi necessária a utilização de categorias para os posts, trabalhando, assim, a **relação (N:N) de** `posts` para `categories` e de `categories` para `posts`.
 
