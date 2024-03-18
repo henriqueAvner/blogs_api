@@ -1,4 +1,4 @@
-# README - Blogs_API
+# Blogs_API :computer:
 ![image](https://github.com/henriqueAvner/blogs_api/assets/133919307/cce52096-d19e-48f3-9711-05ba40b2ecb4)
 
 
